@@ -47,7 +47,7 @@ def detallePLATO(request, id_plato):
 
         cadenaDeTexto = (f"Plato {plato.nombre}, "
         f"Tipo: {plato.tipo}, "
-        f"Orden: {plato.orden} ")
+        f"Orden: {plato.orden}")
 
         if ingredientes.exists():
             cadenaDeTexto += "Ingredientes:\n"
