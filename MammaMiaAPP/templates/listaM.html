@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>Lista de Menus</title>
+</head>
+<body>
+    <h1>Lista de Menus</h1>
+    <ul>
+    {% for menu in lista_menus %}
+        <li>
+            <a href="{% url 'detalleMENUConPlantillas' menu.id %}">
+                {{ menu.nombre }} - Descripcion: {{ menu.descripcion }} - Precio: {{ menu.precio }}
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

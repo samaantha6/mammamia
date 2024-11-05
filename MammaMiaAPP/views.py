@@ -5,7 +5,7 @@ from .models import Menu, Plato, Ingrediente
 
 # Create your views here.
 def index(request):
-    return HttpResponse('primera vista')
+    return render(request, 'index.html')
 
 
 def listaMenus(request):
@@ -60,3 +60,61 @@ def detallePLATO(request, id_plato):
     except Plato.DoesNotExist:
         return HttpResponseNotFound("Plato no encontrado")
 
+def listaIngredientes(request):
+    ingredientes = Ingrediente.objects.all()
+    cadenaDeTexto = "Lista de ingredientes:\n"
+
+    if ingredientes.exists():
+        for ingrediente in ingredientes:
+            cadenaDeTexto += (
+                f"- ID: {ingrediente.id}, "
+                f"Nombre: {ingrediente.nombre}, "
+                f"Alergeno: {ingrediente.alergeno}, "
+                f"Categoria: {ingrediente.categoria}, "
+                f"Plato: {ingrediente.plato.nombre}\n"
+            )
+    else:
+        cadenaDeTexto += "No hay ingredientes registrados."
+    return HttpResponse(cadenaDeTexto)
+
+def detalleINGREDIENTE(request, id_ingrediente):
+    try:
+        ingrediente = Ingrediente.objects.get(pk=id_ingrediente)
+
+        cadenaDeTexto = (f"Ingrediente {ingrediente.nombre}, "
+        f"Alergeno: {ingrediente.alergeno}, "
+        f"Categoria: {ingrediente.categoria}")
+
+        return HttpResponse(cadenaDeTexto)
+    except Plato.DoesNotExist:
+        return HttpResponseNotFound("Ingrediente no encontrado")
+
+def detalleMENUConPlantillas(request, id_menu):
+    menu = get_object_or_404(Menu, pk=id_menu)
+    contexto = {'menu': menu}
+    return render(request, 'detalleMenu.html', contexto)
+
+def listaMENUConPlantillas(request):
+    menus = Menu.objects.order_by('nombre')
+    contexto = {'lista_menus': menus}
+    return render(request, 'listaM.html', contexto)
+
+def detallePLATOConPlantillas(request, id_plato):
+    plato = get_object_or_404(Plato, pk=id_plato)
+    contexto = {'plato': plato}
+    return render(request, 'detallePlato.html', contexto)
+
+def listaPLATOConPlantillas(request):
+    platos = Plato.objects.order_by('nombre')
+    contexto = {'lista_platos': platos}
+    return render(request, 'listaP.html', contexto)
+
+def detalleINGREDIENTEConPlantillas(request, id_ingrediente):
+    ingrediente = get_object_or_404(Ingrediente, pk=id_ingrediente)
+    contexto = {'ingrediente': ingrediente}
+    return render(request, 'detalleIngrediente.html', contexto)
+
+def listaINGREDIENTEConPlantillas(request):
+    ingredientes = Ingrediente.objects.order_by('nombre')
+    contexto = {'lista_ingredientes': ingredientes}
+    return render(request, 'listaI.html', contexto)

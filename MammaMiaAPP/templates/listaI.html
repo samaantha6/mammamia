@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>Lista de Ingredientes</title>
+</head>
+<body>
+    <h1>Lista de Ingredientes</h1>
+    <ul>
+    {% for ingrediente in lista_ingredientes %}
+        <li>
+            <a href="{% url 'detalleINGREDIENTEConPlantillas' ingrediente.id %}">
+                {{ ingrediente.nombre }} - Alergeno: {{ ingrediente.alergeno }} - Categoria: {{ ingrediente.categoria }}
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
