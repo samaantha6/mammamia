@@ -1,17 +1,15 @@
-<html>
-<head>
-    <title>Lista de Platos</title>
-</head>
-<body>
-    <h1>Lista de Platos</h1>
-    <ul>
-    {% for plato in lista_platos %}
-        <li>
-            <a href="{% url 'detallePLATOConPlantillas' plato.id %}">
-                {{ plato.nombre }} - Tipo: {{ plato.tipo }} - Orden: {{ plato.orden }}
-            </a>
-        </li>
-    {% endfor %}
-    </ul>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block contenido %}
+
+<h1>Lista de Platos</h1>
+<ul>
+{% for plato in lista_platos %}
+    <li>
+        <a href="{% url 'detallePLATOConPlantillas' plato.id %}">
+            {{ plato.nombre }} - Tipo: {{ plato.tipo }} - Orden: {{ plato.orden }}
+        </a>
+    </li>
+{% endfor %}
+</ul>
+
+{%endblock%}
