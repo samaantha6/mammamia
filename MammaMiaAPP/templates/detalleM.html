@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Detalle del Menu</title>
+</head>
+<body>
+    <h1>Detalle del Menu</h1>
+    <p>Nombre: {{ menu.nombre }}</p>
+    <p>Descripcion: {{ menu.descripcion }}</p>
+    <p>Precio: {{ menu.precio }}</p>
+    <h2>Platos</h2>
+    <ul>
+    {% for plato in menu.platos.all %}
+        <li>
+            <a href="{% url 'detallePLATOConPlantillas' plato.id %}">
+                {{ plato.nombre }} {{ plato.tipo }} {{ plato.orden }}
+            </a>
+        </li>
+    {% empty %}
+        <li>No hay platos asociados a este menu.</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
+from django.shortcuts import get_object_or_404
 from .models import Menu, Plato, Ingrediente
 
 
@@ -92,7 +93,7 @@ def detalleINGREDIENTE(request, id_ingrediente):
 def detalleMENUConPlantillas(request, id_menu):
     menu = get_object_or_404(Menu, pk=id_menu)
     contexto = {'menu': menu}
-    return render(request, 'detalleMenu.html', contexto)
+    return render(request, 'detalleM.html', contexto)
 
 def listaMENUConPlantillas(request):
     menus = Menu.objects.order_by('nombre')
@@ -102,7 +103,7 @@ def listaMENUConPlantillas(request):
 def detallePLATOConPlantillas(request, id_plato):
     plato = get_object_or_404(Plato, pk=id_plato)
     contexto = {'plato': plato}
-    return render(request, 'detallePlato.html', contexto)
+    return render(request, 'detalleP.html', contexto)
 
 def listaPLATOConPlantillas(request):
     platos = Plato.objects.order_by('nombre')
@@ -112,7 +113,7 @@ def listaPLATOConPlantillas(request):
 def detalleINGREDIENTEConPlantillas(request, id_ingrediente):
     ingrediente = get_object_or_404(Ingrediente, pk=id_ingrediente)
     contexto = {'ingrediente': ingrediente}
-    return render(request, 'detalleIngrediente.html', contexto)
+    return render(request, 'detalleI.html', contexto)
 
 def listaINGREDIENTEConPlantillas(request):
     ingredientes = Ingrediente.objects.order_by('nombre')
