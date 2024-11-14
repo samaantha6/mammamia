@@ -17,6 +17,12 @@ p
 img
 { border: 0;}
 
+#logo
+{
+  width: 20px;
+  height: 20px;
+}
+
 h1, h2, h3, h4, h5, h6 
 { font: normal 175% 'century gothic', arial, sans-serif;
   color: #000;
