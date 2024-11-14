@@ -12,6 +12,7 @@ class Plato(models.Model):
     nombre = models.CharField(max_length=50)
     tipo = models.CharField(max_length=50)
     orden =  models.IntegerField(default = 0)
+    imagenPlato = models.URLField(max_length=60, null=True, blank=True)
     menu = models.ForeignKey(Menu, related_name='platos', on_delete=models.CASCADE)
 
 

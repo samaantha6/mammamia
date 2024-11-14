@@ -6,6 +6,14 @@
 <p>Tipo: {{ plato.tipo }}</p>
 <p>Orden: {{ plato.orden }}</p>
 <p>Menu: {{ plato.menu.nombre }}</p>
+
+{% if plato.imagenPlato %}
+    <p>Imagen:</p>
+    <img class="misImagenesPlato" src="{{ plato.imagenPlato }}" alt="Imagen del plato">
+
+{% else %}
+    <p>no hAy bizCOCho</p>
+{% endif %}
 <h2>Ingredientes</h2>
 <ul>
 {% for ingrediente in plato.ingredientes.all %}
