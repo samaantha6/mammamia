@@ -7,8 +7,10 @@ html
 
 body
 { font: normal .80em 'trebuchet ms', arial, sans-serif;
-  background: #F0EFE2 url(background.png) repeat;
-  color: #000;}
+  background-image: url("fondo1.jpg"); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;   color: #000;}
 
 #map {
   width: 10px;
