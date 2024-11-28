@@ -37,7 +37,6 @@ img
 {
   width: 500px;
   height: 500px;
-  border: 2px solid magenta;
 }
 
 #portadaFoto
@@ -49,18 +48,17 @@ img
 #description{
   width: 500px;
   height: 500px;
-  border: 2px solid magenta;
-
 }
 
 #desc{
   color: rgb(244, 244, 244);  
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 16px;
   margin: 0 auto;
   padding-top: 15px;
-  width: 80%; 
-  margin-top: 15px !important; 
-
+  width: 90%; 
+  margin-top: 30px !important; 
+  text-shadow: 2px 2px 2px black;
 }
 
 #bloque{
