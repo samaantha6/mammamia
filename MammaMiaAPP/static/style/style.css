@@ -19,6 +19,7 @@ body
   margin-top: 20px;
   margin-bottom: 30px;
 }
+
 p
 { padding: 0 0 20px 0;
   line-height: 1.7em;}
@@ -31,6 +32,49 @@ img
   width: 20px;
   height: 20px;
 }
+
+#portada
+{
+  width: 500px;
+  height: 500px;
+  border: 2px solid magenta;
+}
+
+#portadaFoto
+{
+  width: 500px;
+  height: 500px;
+}
+
+#description{
+  width: 500px;
+  height: 500px;
+  border: 2px solid magenta;
+
+}
+
+#desc{
+  color: rgb(244, 244, 244);  
+  font-size: 16px;
+  margin: 0 auto;
+  padding-top: 15px;
+  width: 80%; 
+  margin-top: 15px !important; 
+
+}
+
+#bloque{
+
+  display: flex;
+  justify-content: center; 
+  gap: 20px;
+}
+
+.misImagenesPlato
+{
+  width: 25vh;
+}
+
 
 h1, h2, h3, h4, h5, h6 
 { font: normal 175% 'century gothic', arial, sans-serif;
@@ -124,9 +168,9 @@ ol li
   color: #FFF;}
 
 #menubar
-{ width: 898px;
+{ width: 1000px;
   height: 52px;
-  padding: 0;
+  padding: 0 24px 0 20px;
   background: #000;
   border-top: 2px solid #FFF;
 } 
@@ -158,11 +202,11 @@ ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
   background: transparent url(transparent_light.png) repeat;}
 
 #site_content
-{ width: 854px;
+{ width: 1000px;
   overflow: hidden;
   margin: 0 auto 0 auto;
   padding: 0 24px 20px 20px;
-  background: #FFF;} 
+  background: rgba(245, 245, 245, 0.356)} 
 
 .sidebar
 { float: right;
