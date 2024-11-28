@@ -16,21 +16,19 @@
 
 <body>
   <div id="main">
-    <div id="header">
-      <div id="logo">
-          <!-- class="logo_colour", allows you to change the colour of the text -->
-          <img id="logo" src="{% static 'style/logoBlanco.png' %}" alt="logoBlanco">
-      </div>          
+    <div id="header">            
       <br>
       <div id="menubar">
         <ul id="menu">
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
           <li class="selected"><a href="{% url 'index' %}">Home</a></li>
         </ul>
+        <div id="logo">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <img id="logob" src="{% static 'style/logoBlanco.png' %}" alt="logoBlanco">
+      </div>  
       </div>
     </div>
-
-  
 
     <div id="site_content">
       <br><br><br>
