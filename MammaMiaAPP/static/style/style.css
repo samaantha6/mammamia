@@ -203,11 +203,17 @@ ul#menu li a:hover
 { color: #9f1a1a;}
 
 #site_content
-{ width: 1000px;
-  overflow: hidden;
-  margin: 0 auto 0 auto;
-  padding: 0 20px 18px 18px;
-  background: rgb(255, 255, 255)} 
+{ display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 1400px;
+} 
 
 .sidebar
 { float: right;
@@ -249,9 +255,9 @@ ul#menu li a:hover
   line-height: 1.5em;}
 
 #footer
-{ width: 898px;
+{ width: 1500px;
   font: normal 100% 'lucida sans unicode', arial, sans-serif;
-  height: 33px;
+  height: 35px;
   padding: 24px 0 5px 0;
   text-align: center; 
   background: transparent;
@@ -345,6 +351,23 @@ table tr td
   color: #47433F;
   border-top: 1px solid #FFF;}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Contenedor principal */
 #horario-ubicacion {
   display: flex;
@@ -416,5 +439,3 @@ table tr td
 }
 
 
-
-  
