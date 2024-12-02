@@ -11,6 +11,12 @@
   <link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}" title="style" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- FUENTES -->
+   <!-- Jost -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700;900&family=Comfortaa:wght@300..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   
 </head>
 
@@ -48,28 +54,78 @@
         </div>
       </div>
 
-      <div>{%block contenido%} {%endblock%}</div>
-    </div>
+
+      <div id="contenidos" >{%block contenido%} {%endblock%}</div>
 
 
+      <div id="comments-section">
+        <h2>Comentarios</h2>
+      
+        <!-- Lista de comentarios existentes -->
+        <div id="comments-list">
+          <div class="comment">
+            <strong>Juan P.:</strong> 
+            <span>⭐⭐⭐⭐⭐ Muy bueno</span>
+            <p>Sitio muy recomendable para disfrutar de la comida italiana, productos de calidad con una atención muy agradable.
+              Fácil aparcamiento.
+              Sin duda para repetir.</p>
+          </div>
+          <div class="comment">
+            <strong>María H.:</strong> 
+            <span>⭐⭐⭐⭐ Normal</span>
+            <p>Las pizzas no están mal, la carta es variada y tienen pizzas al metro que salen más económicas pero el servicio... no es muy profesional.</p>
+          </div>
+        </div>
+      
+        <!-- Formulario para agregar comentarios -->
+        <div id="comment-form">
+          <h3>Deja tu comentario</h3>
+          <form id="add-comment-form">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" placeholder="Escribe tu nombre" required>
+      
+            <label for="rating">Valoración:</label>
+            <select id="rating" required>
+              <option value="" disabled selected>Selecciona una valoración</option>
+              <option value="Muy malo">⭐ Muy malo</option>
+              <option value="Malo">⭐⭐ Malo</option>
+              <option value="Normal">⭐⭐⭐ Normal</option>
+              <option value="Bueno">⭐⭐⭐⭐ Bueno</option>
+              <option value="Muy bueno">⭐⭐⭐⭐⭐ Muy bueno</option>
+            </select>
+      
+            <label for="comment">Comentario:</label>
+            <textarea id="comment" rows="4" placeholder="Escribe tu comentario aquí" required></textarea>
+      
+            <button type="button" id="submit-comment">Comentar</button>
+          </form>
+        </div>
+      </div>
 
-    <div id="footer">
-          <div id="horario-ubicacion">
-      <div id="info-horario">
+      
+      <div id="horario-ubicacion">
+        <div id="info-horario">
           <h2>Horario y Ubicación</h2>
           <p>Lunes a domingo: <strong>12:00-16:00 / 19:00-00:00</strong></p>
           <hr>
           <ul id="contactos">
               <li><img src="{% static 'style/instagram_icon.png' %}" alt="Instagram">@mammamiarestaurante</li>
-              <li><img src="{% static 'style/whatsapp_icon.png' %}" alt="WhatsApp">+64 624 138 246</li>
               <li><img src="{% static 'style/x_icon.png' %}" alt="X">@mamma_mia_restaurante</li>
+              <li><img src="{% static 'style/whatsapp_icon.png' %}" alt="WhatsApp">+64 624 138 246</li>
           </ul>
-      </div>
-      <div id="map-container">
-        <div id="map" style="width: 100%; height: 300px; margin-top: 20px;"></div>
-          
-      </div>
+        </div>
+        <div id="map-container">
+          <div id="map" style="width: 100%; height: 300px; margin-top: 20px;"></div>
+        </div>
+      </div>   
+
+
+      
     </div>
+
+
+
+    <div id="footer">
       Copyright &copy; Mamma Mia Restaurante 
     </div>
 
@@ -79,6 +135,8 @@
 
 <!-- MAPA FOOTER-->
 <script>
+
+  //MAPA
   function initMap() {
       
       const map = L.map('map').setView([43.262907, -2.947408], 17);
@@ -108,6 +166,34 @@
   
   document.addEventListener('DOMContentLoaded', initMap);
 
+
+  //COMENTARIOS
+  document.getElementById('submit-comment').addEventListener('click', function () {
+    
+    const name = document.getElementById('name').value.trim();
+    const rating = document.getElementById('rating').value;
+    const comment = document.getElementById('comment').value.trim();
+
+    
+    if (!name || !rating || !comment) {
+      alert('Por favor, rellena todos los campos antes de comentar.');
+      return;
+    }
+
+    const newComment = document.createElement('div');
+    newComment.classList.add('comment');
+    newComment.innerHTML = `
+      <strong>${name}:</strong> 
+      <span>${rating}</span>
+      <p>${comment}</p>
+    `;
+
+    const commentsList = document.getElementById('comments-list');
+    commentsList.appendChild(newComment);
+
+    document.getElementById('add-comment-form').reset();
+
+  });
 </script>
 
 
