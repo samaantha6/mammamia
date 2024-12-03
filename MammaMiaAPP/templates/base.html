@@ -28,7 +28,7 @@
         <ul id="menu">
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
           <li class="selected"><a href="{% url 'index' %}">Home</a></li>
-          <li><a href="#contenidos">Menu</a></li>
+          <li><a href="#menus">Menus</a></li>
         </ul>
         <div id="logo">
           <!-- class="logo_colour", allows you to change the colour of the text -->
@@ -56,7 +56,23 @@
       </div>
 
       <br>
-      <div id="contenidos">{%block contenido%} {%endblock%}</div>
+
+      <div id="menus">
+      
+        <img class="menu-item" src="{% static 'style/fondilloCLASSIC.JPG' %}" alt="Menú Clásico">
+        <img class="menu-item" src="{% static 'style/fondilloGOURMET.JPG' %}" alt="Menú Gourmet">
+        <img class="menu-item" src="{% static 'style/fondilloMARINO.JPG' %}" alt="Menú Marino">
+        <img class="menu-item" src="{% static 'style/fondilloVEGE.JPG' %}" alt="Menú Vegetariano">
+
+      </div>
+
+      <br>
+
+      <div id="contenidos">
+      
+        {%block contenido%} {%endblock%}
+
+      </div>
 
 
       <div id="comments-section">
