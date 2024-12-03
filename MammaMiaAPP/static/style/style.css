@@ -48,14 +48,18 @@ img
   margin-left: 50px;
 }
 
-#description{
-  display: inline-block;
 
+#desc {
+  display: inline-block;
   color: rgb(0, 0, 0);  
   font-family: 'Jost', sans-serif;
   font-size: 16px;
-  margin-left: 90px;
-  width: 100%; 
+  width: 50%; 
+
+}
+#description{
+  display: inline-block;
+  border: 2px solid red;
 }
 
 
