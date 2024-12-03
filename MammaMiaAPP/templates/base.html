@@ -28,6 +28,7 @@
         <ul id="menu">
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
           <li class="selected"><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="#contenidos">Menu</a></li>
         </ul>
         <div id="logo">
           <!-- class="logo_colour", allows you to change the colour of the text -->
@@ -54,8 +55,8 @@
         </div>
       </div>
 
-
-      <div id="contenidos" >{%block contenido%} {%endblock%}</div>
+      <br>
+      <div id="contenidos">{%block contenido%} {%endblock%}</div>
 
 
       <div id="comments-section">

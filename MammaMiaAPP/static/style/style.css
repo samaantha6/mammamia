@@ -1,6 +1,10 @@
 html
 { height: 100%;}
 
+html {
+  scroll-behavior: smooth; 
+}
+
 *
 { margin: 0;
   padding: 0;}
@@ -36,8 +40,8 @@ img
 #portada
 {
   display: inline-block;
-  width: 500px;
-  height: 500px;
+  width: 50%;
+  height: 50%;
 }
 
 #portadaFoto
@@ -54,24 +58,26 @@ img
   color: rgb(0, 0, 0);  
   font-family: 'Jost', sans-serif;
   font-size: 16px;
-  width: 50%; 
+  width: 80%; 
 
 }
+
 #description{
-  display: inline-block;
+  width: 50%;
+  height: 50%;
   border: 2px solid red;
 }
 
 
 #contenidos{
-  display: inline-block;
+  display: flex;
   justify-content: center; 
   gap: 20px;
   border: 2px solid blue;
 }
 
 #bloque{
-  display: inline-block;
+  display: flex;
   width: 100%; 
   align-items: center;
   border: 2px solid purple;
@@ -220,7 +226,7 @@ ul#menu li a:hover
   border: 1px solid #ddd;
   border-radius: 10px;
   max-width: 1400px;
-  border: 2px solid red;
+  border: 2px solid rgb(170, 255, 0);
 } 
 
 .sidebar
