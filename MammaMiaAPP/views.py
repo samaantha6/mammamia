@@ -31,7 +31,8 @@ def listaMENUConPlantillas(request):
 @permission_required('myapp.can_view_menu', raise_exception=True)
 def detalleMENUConPlantillas(request, id_menu):
     menu = get_object_or_404(Menu, pk=id_menu)
-    return render(request, 'detalleM.html', {'menu': menu})
+    menus = Menu.objects.all()
+    return render(request, 'detalleM.html', {'menu': menu, 'lista_menus': menus})
 
 @permission_required('myapp.can_view_plato', raise_exception=True)
 def listaPlatos(request):
@@ -57,7 +58,8 @@ def listaPLATOConPlantillas(request):
 @permission_required('myapp.can_view_plato', raise_exception=True)
 def detallePLATOConPlantillas(request, id_plato):
     plato = get_object_or_404(Plato, pk=id_plato)
-    return render(request, 'detalleP.html', {'plato': plato})
+    menus = Menu.objects.all()
+    return render(request, 'detalleP.html', {'plato': plato, 'lista_menus': menus})
 
 @permission_required('myapp.can_view_ingrediente', raise_exception=True)
 def listaIngredientes(request):
@@ -77,4 +79,6 @@ def listaINGREDIENTEConPlantillas(request):
 @permission_required('myapp.can_view_ingrediente', raise_exception=True)
 def detalleINGREDIENTEConPlantillas(request, id_ingrediente):
     ingrediente = get_object_or_404(Ingrediente, pk=id_ingrediente)
-    return render(request, 'detalleI.html', {'ingrediente': ingrediente})
+    menus = Menu.objects.all()
+    return render(request, 'detalleI.html', {'ingrediente': ingrediente, 'lista_menus': menus})
+

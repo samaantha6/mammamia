@@ -1,15 +1,16 @@
 {% extends 'base.html' %}
 {% block contenido %}
+{% load static %}
 
-<h1>Lista de Menus</h1>
-<ul>
+<!--
 {% for menu in lista_menus %}
-    <li>
-        <a href="{% url 'detalleMENUConPlantillas' menu.id %}">
-            {{ menu.nombre }} - Descripcion: {{ menu.descripcion }} - Precio: {{ menu.precio }}
-        </a>
-    </li>
+
+
+<a href="{% url 'detalleMENUConPlantillas' menu.id %}">
+    <img class="menu-item" src="{% static 'style/' %}{{ menu.nombre }}.jpg" alt="{{ menu.nombre }}">
+</a>
+    
 {% endfor %}
-</ul>
+-->
 
 {%endblock%}

@@ -27,7 +27,7 @@
       <div id="menubar">
         <ul id="menu">
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
-          <li class="selected"><a href="{% url 'index' %}">Home</a></li>
+          <li class="selected"><a href="{% url 'listaM' %}">Home</a></li>
           <li><a href="#menus">Menus</a></li>
         </ul>
         <div id="logo">
@@ -58,12 +58,11 @@
       <br>
 
       <div id="menus">
-      
-        <img class="menu-item" src="{% static 'style/fondilloCLASSIC.JPG' %}" alt="Menú Clásico">
-        <img class="menu-item" src="{% static 'style/fondilloGOURMET.JPG' %}" alt="Menú Gourmet">
-        <img class="menu-item" src="{% static 'style/fondilloMARINO.JPG' %}" alt="Menú Marino">
-        <img class="menu-item" src="{% static 'style/fondilloVEGE.JPG' %}" alt="Menú Vegetariano">
-
+        {% for menu in lista_menus %}
+            <a href="{% url 'detalleMENUConPlantillas' menu.id %}">
+                <img class="menu-item" src="{% static 'style/' %}{{ menu.nombre }}.jpg" alt="{{ menu.nombre }}">
+            </a>
+        {% endfor %}
       </div>
 
       <br>
