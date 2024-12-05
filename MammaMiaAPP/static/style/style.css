@@ -404,42 +404,44 @@ table tr td
   display: inline-block;
   width: 100%; 
   vertical-align: top;
-  border: 2px solid orange; 
 
 }
 
 #info-horario {
   flex: 1;
-  max-width: 45%;
+  max-width: 99%;
 }
 
 
 #info-horario h2 {
   font-size: 1.8rem;
   color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
+  margin-left: 40%;
 }
 
 #info-horario p {
   font-size: 1.2rem;
   color: #555;
+  margin-left: 34%;
 }
 
 #info-horario hr {
-  margin: 15px 0;
-  border: 0;
+  margin: 5px 0;
   border-top: 1px solid #ddd;
 }
 
 
 #contactos {
-  list-style: none;
   padding: 0;
+  margin-left: 23%;
+
 }
 
 #contactos li {
   display: inline-block;
   align-items: center;
+  margin-top: 10px;
   margin-bottom: 10px;
   font-size: 1.1rem;
   color: #444;
