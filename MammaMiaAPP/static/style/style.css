@@ -31,7 +31,7 @@ html, body {
 body
 { font: normal .80em 'Jost', sans-serif;
   background-image: url("fondo1.jpg"); 
-  background-size: 200%;  
+  background-size: 250%;  
   background-position: center; 
   background-repeat: no-repeat;   
   color: #000;
@@ -78,14 +78,14 @@ img
   color: rgb(0, 0, 0);  
   font-family: 'Jost', sans-serif;
   font-size: 16px;
-  width: 80%; 
+  width: 90%; 
+  padding: 0;
 
 }
 
 #description{
   width: 50%;
   height: 50%;
-  border: 2px solid red;
 }
 
 
@@ -100,7 +100,7 @@ img
   display: flex;
   width: 100%; 
   align-items: center;
-  border: 2px solid purple;
+  gap: 40px;
 }
 
 #menus {
@@ -299,7 +299,7 @@ ul#menu li a:hover
   line-height: 1.5em;}
 
 #footer
-{ width: 1500px;
+{ 
   font: normal 100% 'Jost', 'Jost', sans-serif;
   height: 35px;
   padding: 24px 0 5px 0;
@@ -309,14 +309,6 @@ ul#menu li a:hover
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
-
-#footer a
-{ color: #FFF;
-  text-decoration: none;}
-
-#footer a:hover
-{ color: #FFF;
-  text-decoration: underline;}
 
 .search
 { color: #5D5D5D; 
@@ -404,42 +396,45 @@ table tr td
   display: inline-block;
   width: 100%; 
   vertical-align: top;
-  border: 2px solid orange; 
 
 }
 
 #info-horario {
   flex: 1;
-  max-width: 45%;
+  max-width: 99%;
 }
 
 
 #info-horario h2 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 1.8rem;
   color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
+  margin-left: 39.5%;
 }
 
 #info-horario p {
   font-size: 1.2rem;
   color: #555;
+  margin-left: 34%;
 }
 
 #info-horario hr {
-  margin: 15px 0;
-  border: 0;
+  margin: 5px 0;
   border-top: 1px solid #ddd;
 }
 
 
 #contactos {
-  list-style: none;
   padding: 0;
+  margin-left: 23%;
+
 }
 
 #contactos li {
   display: inline-block;
   align-items: center;
+  margin-top: 10px;
   margin-bottom: 10px;
   font-size: 1.1rem;
   color: #444;
@@ -454,7 +449,8 @@ table tr td
 /* Mapa */
 #map-container {
   flex: 1;
-  max-width: 50%;
+  max-width: 70%;
+  margin: 0 auto;
 }
 
 #map {
