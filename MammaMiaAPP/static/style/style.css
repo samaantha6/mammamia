@@ -454,7 +454,8 @@ table tr td
 /* Mapa */
 #map-container {
   flex: 1;
-  max-width: 50%;
+  max-width: 70%;
+  margin: 0 auto;
 }
 
 #map {
