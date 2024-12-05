@@ -72,6 +72,14 @@ img
   margin-left: 50px;
 }
 
+#titu{
+  color: rgb(0, 0, 0);  
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 30px;
+  width: 90%; 
+  border-bottom: 10px;
+
+}
 
 #desc {
   display: inline-block;
