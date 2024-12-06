@@ -30,6 +30,8 @@
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
           <li class="selected"><a href="{% url 'listaM' %}">Home</a></li>
           <li><a href="#menus">Menus</a></li>
+          <li><a href="#comments-section">Reseñas</a></li>
+          <li><a href="#horario-ubicacion">Horarios</a></li>
         </ul>
         <div id="logo">
           <!-- class="logo_colour", allows you to change the colour of the text -->
@@ -127,27 +129,27 @@
       <br>
 
       <div id="horario-ubicacion">
-        <div id="info-horario">
-          <h2>───── Horario y Ubicación ─────</h2>
-          
-          <p><strong>Lunes a Viernes:</strong> 13:00-16:00 / 20:00-23:00</p>
-          <p><strong>Sábados y Domingos:</strong> 12:00-16:00 / 19:00-01:00</p>
-          <p><strong>Festivos:</strong> 13:00-16:00</p>
-          
-        </div>
-        <div id="map-container">
-          <div id="map" style="width: 100%; height: 300px; margin-top: 20px;"></div>
+        <h2>───── Horario y Ubicación ─────</h2>
+        <div class="horario-union"> 
+          <div id="info-horario">
+            <div id="horario-horas">
+              <p><strong>Lunes a Viernes:</strong> 13:00-16:00 / 20:00-23:00</p>
+              <p><strong>Sábados y Domingos:</strong> 12:00-16:00 / 19:00-01:00</p>
+              <p><strong>Festivos:</strong> 13:00-16:00</p>
+            </div>
+          </div>
+          <div id="map-container">
+            <div id="map" style="width: 100%; height: 300px; margin-top: 20px;"></div>
+          </div>
         </div>
         <hr>
         <ul id="contactos">
-            <li><img src="{% static 'style/instagram_icon.png' %}" alt="Instagram">@mammamiarestaurante</li>
-            <li><img src="{% static 'style/x_icon.png' %}" alt="X">@mamma_mia_restaurante</li>
-            <li><img src="{% static 'style/whatsapp_icon.png' %}" alt="WhatsApp">+34 624 138 246</li>
+          <li><img src="{% static 'style/instagram_icon.png' %}" alt="Instagram">@mammamiarestaurante</li>
+          <li><img src="{% static 'style/x_icon.png' %}" alt="X">@mamma_mia_restaurante</li>
+          <li><img src="{% static 'style/whatsapp_icon.png' %}" alt="WhatsApp">+34 624 138 246</li>
         </ul>
-      </div>   
-
-
-      
+      </div>
+        
     </div>
 
 

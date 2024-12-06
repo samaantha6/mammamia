@@ -214,7 +214,9 @@ ol li
 
 #header
 { background: transparent;
-  height: 202px;}
+  height: 180px;
+  margin-top: 0px;
+}
 
 #logo
 { width: 100px;
@@ -245,7 +247,7 @@ ol li
 #menubar
 {
   
-  padding-left: 20px;
+  padding-left: 50px;
   background: black; 
   background-position: top; 
 } 
@@ -265,7 +267,7 @@ ul#menu li a
   font-size: 13px;
   display: inline-block; 
   height: 17px;
-  margin: 35px 0 0 10px;
+  margin: 35px 0 0 0px;
   padding: 9px 26px 6px 26px;
   text-align: center;
   color: #FFF;
@@ -418,14 +420,30 @@ table tr td
   vertical-align: top;
 
 }
+#horario-horas{
+  display: inline-block;
+  width: 80%;
+  margin-left: 70px;
+  margin-top: 80px;
+  
+}
+
+.horario-union {
+  display: flex; 
+  align-items: flex-start;
+  gap: 30px; 
+  margin-top: 20px; 
+  margin-left: 160px;
+  
+}
 
 #info-horario {
   flex: 1;
-  max-width: 99%;
+  max-width: 45%;  
 }
 
 
-#info-horario h2 {
+#horario-ubicacion h2 {
   margin-top: 50px;
   font-family: 'Domine', 'Times New Roman', Times, serif;
   font-size: 1.8rem;
@@ -471,14 +489,15 @@ table tr td
 
 /* Mapa */
 #map-container {
-  flex: 1;
-  max-width: 100%;
-  margin: 0 auto;
-  margin-top: 60px;
+  flex: 1; 
+  margin-left: 0px;
+  max-width: 40%;
+  margin-top: 0;
 }
 
 #map {
-  width: 100%;
+
+  display: inline-block;
   height: 300px;
   border-radius: 10px;
   border: 1px solid #ddd;
