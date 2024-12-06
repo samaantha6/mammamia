@@ -13,11 +13,12 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
   <!-- FUENTES -->
-   <!-- Jost -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Jost -->
   <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700;900&family=Comfortaa:wght@300..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  
+  <!-- Domine -->
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cardo:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700;900&family=Comfortaa:wght@300..700&family=Domine:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -46,10 +47,10 @@
         </div>
 
         <div id="description">
-          <h1 id="titu"> MammaMia</h1>
-          <p id="desc">MammaMia nace del amor por Italia, su rica tradición culinaria y su cálida manera de vivir la vida. Cada plato de pasta, elaborado con dedicación, 
+          <h1 id="titu"> Mamma Mia Restaurante</h1>
+          <p id="desc">Mamma Mia nace del amor por Italia, su rica tradición culinaria y su cálida manera de vivir la vida. Cada plato de pasta, elaborado con dedicación, 
           busca transportarte a momentos entrañables en torno a una mesa, rodeado de risas, familia y buenos amigos. <br><br>
-          MammaMia es hogar, es vecindario, y aspira a ser el rincón donde disfrutes de la auténtica cocina italiana, servida con pasión y un toque de cariño. 
+          Mamma Mia es hogar, es vecindario, y aspira a ser el rincón donde disfrutes de la auténtica cocina italiana, servida con pasión y un toque de cariño. 
           Desde nuestra cocina artesanal, queremos invitarte a formar parte de este delicioso viaje que combina sabores, emociones y memorias inolvidables. 
           <br><br> Benvenuti a casa!
           </p>
@@ -57,6 +58,9 @@
       </div>
 
       <br>
+      <hr>
+      <br>
+
 
       <div id="menus">
         {% for menu in lista_menus %}
@@ -76,46 +80,47 @@
 
 
       <div id="comments-section">
-        <h2>Comentarios</h2>
+        <h2>───── Reseñas ─────</h2>
       
         <!-- Lista de comentarios existentes -->
-        <div id="comments-list">
-          <div class="comment">
-            <strong>Juan P.:</strong> 
-            <span>⭐⭐⭐⭐⭐ Muy bueno</span>
-            <p>Sitio muy recomendable para disfrutar de la comida italiana, productos de calidad con una atención muy agradable.
-              Fácil aparcamiento.
-              Sin duda para repetir.</p>
+        <div id="comments-section-union">
+          <div id="comments-list">
+            <div class="comment">
+              <strong>Juan P.:</strong> 
+              <span>⭐⭐⭐⭐⭐ Muy bueno</span>
+              <p>Sitio muy recomendable para disfrutar de la comida italiana, productos de calidad con una atención muy agradable.
+                Fácil aparcamiento.
+                Sin duda para repetir.</p>
+            </div>
+            <div class="comment">
+              <strong>María H.:</strong> 
+              <span>⭐⭐⭐⭐ Normal</span>
+              <p>Las pizzas no están mal, la carta es variada y tienen pizzas al metro que salen más económicas pero el servicio... no es muy profesional.</p>
+            </div>
           </div>
-          <div class="comment">
-            <strong>María H.:</strong> 
-            <span>⭐⭐⭐⭐ Normal</span>
-            <p>Las pizzas no están mal, la carta es variada y tienen pizzas al metro que salen más económicas pero el servicio... no es muy profesional.</p>
+        
+          <!-- Formulario para agregar comentarios -->
+          <div id="comment-form">
+            <form id="add-comment-form">
+              <label for="name">Nombre:</label>
+              <input type="text" id="name" placeholder="Escribe tu nombre" required>
+        
+              <label for="rating">Valoración:</label>
+              <select id="rating" required>
+                <option value="" disabled selected>Selecciona una valoración</option>
+                <option value="⭐ Muy malo">⭐ Muy malo</option>
+                <option value="⭐⭐ Malo">⭐⭐ Malo</option>
+                <option value="⭐⭐⭐ Normal">⭐⭐⭐ Normal</option>
+                <option value="⭐⭐⭐⭐ Bueno">⭐⭐⭐⭐ Bueno</option>
+                <option value="⭐⭐⭐⭐⭐ Muy bueno">⭐⭐⭐⭐⭐ Muy bueno</option>
+              </select>
+        
+              <label for="comment">Comentario:</label>
+              <textarea id="comment" rows="4" placeholder="Escribe tu comentario aquí" required></textarea>
+        
+              <button type="button" id="submit-comment">Comentar</button>
+            </form>
           </div>
-        </div>
-      
-        <!-- Formulario para agregar comentarios -->
-        <div id="comment-form">
-          <h3>Deja tu comentario</h3>
-          <form id="add-comment-form">
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" placeholder="Escribe tu nombre" required>
-      
-            <label for="rating">Valoración:</label>
-            <select id="rating" required>
-              <option value="" disabled selected>Selecciona una valoración</option>
-              <option value="⭐ Muy malo">⭐ Muy malo</option>
-              <option value="⭐⭐ Malo">⭐⭐ Malo</option>
-              <option value="⭐⭐⭐ Normal">⭐⭐⭐ Normal</option>
-              <option value="⭐⭐⭐⭐ Bueno">⭐⭐⭐⭐ Bueno</option>
-              <option value="⭐⭐⭐⭐⭐ Muy bueno">⭐⭐⭐⭐⭐ Muy bueno</option>
-            </select>
-      
-            <label for="comment">Comentario:</label>
-            <textarea id="comment" rows="4" placeholder="Escribe tu comentario aquí" required></textarea>
-      
-            <button type="button" id="submit-comment">Comentar</button>
-          </form>
         </div>
       </div>
 
@@ -123,18 +128,22 @@
 
       <div id="horario-ubicacion">
         <div id="info-horario">
-          <h2>Horario y Ubicación</h2>
-          <p><strong>Lunes a domingo: </strong> <em>12:00-16:00 / 19:00-00:00</em></p>
-          <hr>
-          <ul id="contactos">
-              <li><img src="{% static 'style/instagram_icon.png' %}" alt="Instagram">@mammamiarestaurante</li>
-              <li><img src="{% static 'style/x_icon.png' %}" alt="X">@mamma_mia_restaurante</li>
-              <li><img src="{% static 'style/whatsapp_icon.png' %}" alt="WhatsApp">+34 624 138 246</li>
-          </ul>
+          <h2>───── Horario y Ubicación ─────</h2>
+          
+          <p><strong>Lunes a Viernes:</strong> 13:00-16:00 / 20:00-23:00</p>
+          <p><strong>Sábados y Domingos:</strong> 12:00-16:00 / 19:00-01:00</p>
+          <p><strong>Festivos:</strong> 13:00-16:00</p>
+          
         </div>
         <div id="map-container">
           <div id="map" style="width: 100%; height: 300px; margin-top: 20px;"></div>
         </div>
+        <hr>
+        <ul id="contactos">
+            <li><img src="{% static 'style/instagram_icon.png' %}" alt="Instagram">@mammamiarestaurante</li>
+            <li><img src="{% static 'style/x_icon.png' %}" alt="X">@mamma_mia_restaurante</li>
+            <li><img src="{% static 'style/whatsapp_icon.png' %}" alt="WhatsApp">+34 624 138 246</li>
+        </ul>
       </div>   
 
 
