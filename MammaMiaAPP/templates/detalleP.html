@@ -1,27 +1,30 @@
 {% extends 'base.html' %}
 {% block contenido %}
 
-<h1><strong>{{ plato.nombre }}</strong></h1>
-<p>Menú {{ plato.menu.nombre }}</p>
-
-<h2>Lista de Ingredientes:</h2>
-<ul>
-    {% for ingrediente in plato.ingredientes.all %}
-    <li>
-        <a href="{% url 'detalleINGREDIENTEConPlantillas' ingrediente.id %}">
-            {{ ingrediente.nombre }}
-        </a>
-    </li>
-    {% empty %}
-    <li>No hay ingredientes asociados a este plato.</li>
-    {% endfor %}
-</ul>
+<h1>Detalle del Plato</h1>
+<p>Nombre: {{ plato.nombre }}</p>
+<p>Tipo: {{ plato.tipo }}</p>
+<p>Orden: {{ plato.orden }}</p>
+<p>Menu: {{ plato.menu.nombre }}</p>
 
 {% if plato.imagenPlato %}
     <p>Imagen:</p>
     <img class="misImagenesPlato" src="{{ plato.imagenPlato }}" alt="Imagen del plato">
 
 {% else %}
-    <p>No hay foto</p>
+    <p>No foto asociada a este plato</p>
 {% endif %}
+<h2>Ingredientes</h2>
+<ul>
+{% for ingrediente in plato.ingredientes.all %}
+    <li>
+        <a href="{% url 'detalleINGREDIENTEConPlantillas' ingrediente.id %}">
+            {{ ingrediente.nombre }} {{ ingrediente.alergeno }} {{ ingrediente.categoria }}
+        </a>
+    </li>
+{% empty %}
+    <li>No hay ingredientes asociados a este plato.</li>
+{% endfor %}
+</ul>
+
 {%endblock%}

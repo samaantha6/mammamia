@@ -1,46 +1,21 @@
 {% extends 'base.html' %}
 
-
 {% block contenido %}
-    <h1><strong>Menú {{ menu.nombre }}</strong></h1>
+    <h1>Detalle del Menú</h1>
+    <p><strong>Nombre:</strong> {{ menu.nombre }}</p>
     <p><strong>Descripción:</strong> {{ menu.descripcion }}</p>
-    <p><strong>{{ menu.precio }} €</strong> </p>
+    <p><strong>Precio:</strong> {{ menu.precio }}</p>
 
     <h2>Platos</h2>
     <ul>
-        {% for plato in menu.platos.all %}
-            {% if plato.orden == 0 %}
-                <li>
-                    <p>Entrante:</p>
-                    <a href="{% url 'detallePLATOConPlantillas' plato.id %}">
-                        {{ plato.nombre }}
-                    </a>
-                </li>
-            {% elif plato.orden == 1 %}
-                <li>
-                    <p>Primer Plato:</p>
-                    <a href="{% url 'detallePLATOConPlantillas' plato.id %}">
-                        {{ plato.nombre }}
-                    </a>
-                </li>
-            {% elif plato.orden == 2 %}
-                <li>
-                    <p>Segundo Plato:</p>
-                    <a href="{% url 'detallePLATOConPlantillas' plato.id %}">
-                        {{ plato.nombre }}
-                    </a>
-                </li>
-            {% elif plato.orden == 3 %}
-                <li>
-                    <p>Postre:</p>
-                    <a href="{% url 'detallePLATOConPlantillas' plato.id %}">
-                        {{ plato.nombre }}
-                    </a>
-                </li>
-            {% endif %}
-        {% empty %}
-            <li>No hay platos disponibles.</li>
-        {% endfor %}
+    {% for plato in menu.platos.all %}
+        <li>
+            <a href="{% url 'detallePLATOConPlantillas' plato.id %}">
+                {{ plato.nombre }} {{ plato.tipo }} {{ plato.orden }}
+            </a>
+        </li>
+    {% empty %}
+        <li>No hay platos asociados a este menú.</li>
+    {% endfor %}
     </ul>
-    
 {% endblock %}
