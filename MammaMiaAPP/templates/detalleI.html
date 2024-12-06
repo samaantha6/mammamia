@@ -1,11 +1,8 @@
 {% extends 'base.html' %}
 {% block contenido %}
 
-<h1>Detalle del Ingrediente</h1>
-<p>ID: {{ ingrediente.id }}</p>
-<p>Nombre: {{ ingrediente.nombre }}</p>
+<h1><strong>{{ ingrediente.nombre }}</strong></h1>
 <p>Alergeno: {{ ingrediente.alergeno }}</p>
 <p>Categoria: {{ ingrediente.categoria }}</p>
-<p>Plato: {{ ingrediente.plato.nombre }}</p>
 
 {%endblock%}
