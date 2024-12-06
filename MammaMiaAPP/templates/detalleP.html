@@ -1,30 +1,66 @@
 {% extends 'base.html' %}
 {% block contenido %}
 
-<h1>Detalle del Plato</h1>
-<p>Nombre: {{ plato.nombre }}</p>
-<p>Tipo: {{ plato.tipo }}</p>
-<p>Orden: {{ plato.orden }}</p>
-<p>Menu: {{ plato.menu.nombre }}</p>
+<<<<<<< HEAD
+<div class="detalle-plato-horizontal">
+    <h1 class="menu-title">Detalle del Plato</h1>
+    <div class="contenedor">
+        <div class="info-plato">
+            <p><strong>Nombre:</strong> {{ plato.nombre }}</p>
+            <p><strong>Tipo:</strong> {{ plato.tipo }}</p>
+            <p><strong>Orden:</strong> {{ plato.orden }}</p>
+            <p><strong>Menú:</strong> {{ plato.menu.nombre }}</p>
+        </div>
+=======
+<h1><strong>{{ plato.nombre }}</strong></h1>
+<p>Menú {{ plato.menu.nombre }}</p>
 
-{% if plato.imagenPlato %}
-    <p>Imagen:</p>
-    <img class="misImagenesPlato" src="{{ plato.imagenPlato }}" alt="Imagen del plato">
-
-{% else %}
-    <p>No foto asociada a este plato</p>
-{% endif %}
-<h2>Ingredientes</h2>
+<h2>Lista de Ingredientes:</h2>
 <ul>
-{% for ingrediente in plato.ingredientes.all %}
+    {% for ingrediente in plato.ingredientes.all %}
     <li>
         <a href="{% url 'detalleINGREDIENTEConPlantillas' ingrediente.id %}">
-            {{ ingrediente.nombre }} {{ ingrediente.alergeno }} {{ ingrediente.categoria }}
+            {{ ingrediente.nombre }}
         </a>
     </li>
-{% empty %}
+    {% empty %}
     <li>No hay ingredientes asociados a este plato.</li>
-{% endfor %}
+    {% endfor %}
 </ul>
+>>>>>>> 62e5c2afd9595f87ddc568a07d69d0bc3a8b04b9
 
+        {% if plato.imagenPlato %}
+        <div class="imagen-plato">
+            <p><strong>Imagen:</strong></p>
+            <img class="misImagenesPlato" src="{{ plato.imagenPlato }}" alt="Imagen del plato">
+        </div>
+        {% else %}
+        <div class="imagen-plato">
+            <p>No hay foto asociada a este plato</p>
+        </div>
+        {% endif %}
+    </div>
+
+<<<<<<< HEAD
+    <div class="ingredientes">
+        <h2>Ingredientes</h2>
+        <ul class="ingredientes-list">
+        {% for ingrediente in plato.ingredientes.all %}
+            <li class="ingrediente-item">
+                <a href="{% url 'detalleINGREDIENTEConPlantillas' ingrediente.id %}" class="ingrediente-link">
+                    {{ ingrediente.nombre }} - {{ ingrediente.alergeno }} ({{ ingrediente.categoria }})
+                </a>
+            </li>
+        {% empty %}
+            <li class="ingrediente-item-empty">No hay ingredientes asociados a este plato.</li>
+        {% endfor %}
+        </ul>
+    </div>
+</div>
+
+=======
+{% else %}
+    <p>No hay foto</p>
+{% endif %}
+>>>>>>> 62e5c2afd9595f87ddc568a07d69d0bc3a8b04b9
 {%endblock%}

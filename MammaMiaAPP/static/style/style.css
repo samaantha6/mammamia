@@ -101,7 +101,6 @@ img
   display: flex;
   justify-content: center; 
   gap: 20px;
-  border: 2px solid blue;
 }
 
 #bloque{
@@ -528,3 +527,164 @@ table tr td
   background-color: #9f1a1a;
 }
 
+.menu-detalle-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: auto;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.menu-detalle-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu-info {
+  padding: 15px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  color: #555;
+}
+
+.menu-platos {
+  padding: 15px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+.detalle-plato-horizontal {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  margin: 20px auto;
+  max-width: 1000px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.detalle-plato-horizontal h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.contenedor {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.info-plato {
+  flex: 1;
+  font-size: 16px;
+  color: #333;
+}
+
+.info-plato strong {
+  color: #555;
+}
+
+.imagen-plato {
+  flex: 1;
+  text-align: center;
+}
+
+.imagen-plato img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.ingredientes {
+  margin-top: 20px;
+}
+
+.ingredientes h2 {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.ingredientes-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.ingrediente-item {
+  margin-bottom: 8px;
+}
+
+.ingrediente-link {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+}
+
+.ingrediente-link:hover {
+  color: #555;
+  text-decoration: underline;
+}
+
+.ingrediente-item-empty {
+  color: #999;
+  font-style: italic;
+}
+
+.detalle-ingrediente {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  margin: 20px auto;
+  max-width: 800px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.detalle-ingrediente h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.contenedor-ingrediente {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.info-ingrediente {
+  font-size: 16px;
+  color: #333;
+}
+
+.info-ingrediente strong {
+  color: #555;
+}
+
+.plato-link {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+}
+
+.plato-link:hover {
+  color: #555;
+  text-decoration: underline;
+}
