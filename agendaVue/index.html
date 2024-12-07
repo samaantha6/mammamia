@@ -9,11 +9,6 @@
 
     <title>AgendaVue</title>
 
-
-    <link rel="stylesheet" href="=css/bootstrap.min.css">
-    <script src="js/vue.js"></script>
-
-    
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -88,6 +83,7 @@
     </header>
 
     <!-- Contactos Grid Section -->
+<div id = "app">
     <section id="contactos">
         <div class="container">
             <div class="row">
@@ -108,20 +104,24 @@
                     <h4>Teléfono</h4>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-4">
-                    <p>John Doe</p>
+            
+                <div  class="row" v-for="(c, index) in contactos" :key="index">
+
+                    <div class="col-xs-4">
+                        {{c.nombre}}
+                    </div>
+                    <div class="col-xs-4">
+                        {{c.email}}
+                    </div>
+                    <div class="col-xs-3">
+                        {{c.telefono}}
+                    </div>
+                    <div class="col-xs-1">
+                        <button @click="contactos.splice(index, 1)" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
+                    </div>
+
                 </div>
-                <div class="col-xs-4">
-                    <p>john.doe@deusto.es</p>
-                </div>
-                <div class="col-xs-3">
-                    <p>555555555</p>
-                </div>
-                <div class="col-xs-1">
-                      <button class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove"></span></button>
-                </div>
-            </div>
+            
             </div>
             <div>
               <div class="row">
@@ -148,21 +148,21 @@
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Nombre</label>
-                                <input type="text" class="form-control" placeholder="Nombre" id="name">
+                                <input v-model="newName" type="text" class="form-control" placeholder="Nombre" id="name">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Email</label>
-                                <input type="email" class="form-control" placeholder="Email" id="email">
+                                <input v-model="newEmail" type="email" class="form-control" placeholder="Email" id="email">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Teléfono</label>
-                                <input type="tel" class="form-control" placeholder="Número de teléfono" id="phone">
+                                <input v-model="newTelefono" type="tel" class="form-control" placeholder="Número de teléfono" id="phone">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -170,7 +170,7 @@
                         <div id="success"></div>
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-success btn-lg">Añadir</button>
+                                <button @click="funcNewContacto" type="button" class="btn btn-success btn-lg">Añadir</button>
                             </div>
                         </div>
                     </form>
@@ -178,6 +178,7 @@
             </div>
         </div>
     </section>
+</div>
 
     <!-- About Section -->
     <section class="success" id="about">
@@ -237,6 +238,40 @@
     <!-- Vue -->
     <script src="js/vue.js"></script>   
 
+    <script type="text/javascript">
+        new Vue({
+            el:"#app",
+            data:{
+                contactos: [
+
+                    {nombre: "Maria Gomez",
+                    email: "maria.gomez@deusto.es",
+                    telefono: "666666666"}
+
+                ],
+                newName: "",
+                newEmail: "",
+                newTelefono: ""
+            },
+    
+            methods: {
+                funcNewContacto: function(event){
+                    const nuevoContacto = {nombre: this.newName, 
+                                           email: this.newEmail,
+                                           telefono: this.newTelefono}
+
+			        this.contactos.push(nuevoContacto);
+                    
+                    //alerta para confirmar cambios
+			        /*if (event){
+				        alert(event.target.tagName)
+			        }*/
+		        }
+            }
+        });
+
+        
+    </script>
 </body>
 
 </html>
