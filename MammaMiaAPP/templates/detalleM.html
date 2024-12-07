@@ -13,28 +13,28 @@
         {% for plato in menu.platos.all %}
             {% if plato.orden == 0 %}
                 <li>
-                    <p>Entrante:</p>
+                    <p>{{ plato.tipo }}</p>
                     <a href="{% url 'detallePLATOConPlantillas' plato.id %}">
                         {{ plato.nombre }}
                     </a>
                 </li>
             {% elif plato.orden == 1 %}
                 <li>
-                    <p>Primer Plato:</p>
+                    <p>{{ plato.tipo }}</p>
                     <a href="{% url 'detallePLATOConPlantillas' plato.id %}">
                         {{ plato.nombre }}
                     </a>
                 </li>
             {% elif plato.orden == 2 %}
                 <li>
-                    <p>Segundo Plato:</p>
+                    <p>{{ plato.tipo }}:</p>
                     <a href="{% url 'detallePLATOConPlantillas' plato.id %}">
                         {{ plato.nombre }}
                     </a>
                 </li>
             {% elif plato.orden == 3 %}
                 <li>
-                    <p>Postre:</p>
+                    <p>{{ plato.tipo }}</p>
                     <a href="{% url 'detallePLATOConPlantillas' plato.id %}">
                         {{ plato.nombre }}
                     </a>
