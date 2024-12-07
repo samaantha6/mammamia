@@ -780,7 +780,7 @@ table tr td
 
 
 /* Estilo general del contenido del menú */
-#contenidos {
+#contenidos, #platos {
   display: inline-block;
   font-family: 'Jost', sans-serif;
   margin: 80px;
@@ -791,8 +791,9 @@ table tr td
   text-align: center; /* Centrar el contenido */
 }
 
+
 /* Título del menú */
-#contenidos h1 {
+#contenidos h1, #platos h1 {
   color: #343a40; /* Gris oscuro */
   font-size: 28px;
   margin-bottom: 10px;
@@ -800,19 +801,19 @@ table tr td
 }
 
 /* Descripción y precio del menú */
-#contenidos p {
+#contenidos p, #platos p {
   font-size: 16px;
   color: #495057; /* Gris intermedio */
   margin-bottom: 10px;
   text-align: center; /* Centrar los párrafos */
 }
 
-#contenidos p strong {
+#contenidos p strong, #platos p strong {
   font-weight: bold;
 }
 
 /* Subtítulo de Platos */
-#contenidos h2 {
+#contenidos h2, #platos h2 {
   color: #495057;
   font-size: 24px;
   margin-top: 20px;
@@ -823,14 +824,14 @@ table tr td
 }
 
 /* Lista de platos */
-#contenidos ul {
+#contenidos ul, #platos ul {
   list-style: none;
   padding: 0;
   margin: 0;
   text-align: center; /* Centrar la lista */
 }
 
-#contenidos ul li {
+#contenidos ul li, #platos ul li {
   align-items: center;
   list-style: none;
   margin-bottom: 10px;
@@ -839,7 +840,7 @@ table tr td
 }
 
 /* Títulos de los platos (Entrante, Primer Plato, etc.) */
-#contenidos ul li p {
+#contenidos ul li p, #platos ul li p {
   font-weight: bold;
   color: #343a40;
   margin-bottom: 5px;
@@ -847,7 +848,7 @@ table tr td
 }
 
 /* Links a los detalles del plato */
-#contenidos ul li a {
+#contenidos ul li a, #platos ul li a {
   text-decoration: none;
   color: #000000; /* Negro */
   font-size: 16px;
@@ -855,79 +856,15 @@ table tr td
   text-align: center; /* Centrar los links */
 }
 
-#contenidos ul li a:hover {
+#contenidos ul li a:hover, #platos ul li a:hover {
   color: #2f2f2f; /* Gris más oscuro */
 }
-#contenidos {
+
+#contenidos, #platos {
   display: inline-block;
   font-family: 'Jost', sans-serif;
   margin: 20px;
   padding: 20px;
   background-color: #f8f9fa; /* Fondo claro */
   
-}
-
-/* Título del menú */
-#contenidos h1 {
-  color: #343a40; /* Gris oscuro */
-  font-size: 28px;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-/* Descripción y precio del menú */
-#contenidos p {
-  font-size: 16px;
-  color: #495057; /* Gris intermedio */
-  margin-bottom: 10px;
-}
-
-#contenidos p strong {
-  font-weight: bold;
-}
-
-/* Subtítulo de Platos */
-#contenidos h2 {
-  color: #495057;
-  font-size: 24px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  border-bottom: 2px solid #343a40;
-  padding-bottom: 5px;
-}
-
-/* Lista de platos */
-#contenidos ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-#contenidos ul li {
-  align-items: center;
-  list-style: none;
-  margin-bottom: 10px;
-  padding: 10px;
-}
-
-
-
-/* Títulos de los platos (Entrante, Primer Plato, etc.) */
-#contenidos ul li p {
-  font-weight: bold;
-  color: #343a40;
-  margin-bottom: 5px;
-}
-
-/* Links a los detalles del plato */
-#contenidos ul li a {
-  text-align: center;
-  text-decoration: none;
-  color: #000000; /* Azul bootstrap */
-  font-size: 16px;
-  transition: color 0.2s;
-}
-
-#contenidos ul li a:hover {
-  color: #2f2f2f; /* Azul más oscuro */
 }

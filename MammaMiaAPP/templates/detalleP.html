@@ -1,27 +1,30 @@
 {% extends 'base.html' %}
 {% block contenido %}
 
-<h1><strong>{{ plato.nombre }}</strong></h1>
-<p>Menú {{ plato.menu.nombre }}</p>
+<div id="platos">
+    <h1><strong>{{ plato.nombre }}</strong></h1>
+    <p>Menú {{ plato.menu.nombre }}</p>
 
-<h2>Ingredientes:</h2>
-<ul>
-    {% for ingrediente in plato.ingredientes.all %}
-    <li>
-        <a href="{% url 'detalleINGREDIENTEConPlantillas' ingrediente.id %}">
-            {{ ingrediente.nombre }}
-        </a>
-    </li>
-    {% empty %}
-    <li>No hay ingredientes asociados a este plato.</li>
-    {% endfor %}
-</ul>
+    <h2>Ingredientes:</h2>
+    <ul>
+        {% for ingrediente in plato.ingredientes.all %}
+        <li>
+            <a href="{% url 'detalleINGREDIENTEConPlantillas' ingrediente.id %}">
+                {{ ingrediente.nombre }}
+            </a>
+        </li>
+        {% empty %}
+        <li>No hay ingredientes asociados a este plato.</li>
+        {% endfor %}
+    </ul>
 
-{% if plato.imagenPlato %}
-    <p>Imagen:</p>
-    <img class="misImagenesPlato" src="{{ plato.imagenPlato }}" alt="Imagen del plato">
+    {% if plato.imagenPlato %}
+        <p>Imagen:</p>
+        <img class="misImagenesPlato" src="{{ plato.imagenPlato }}" alt="Imagen del plato">
 
-{% else %}
-    <p>No hay foto</p>
-{% endif %}
+    {% else %}
+        <p>No hay foto</p>
+    {% endif %}
+</div>
+
 {%endblock%}
