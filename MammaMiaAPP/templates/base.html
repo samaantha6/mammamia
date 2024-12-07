@@ -66,7 +66,7 @@
 
       <div id="menus">
         {% for menu in lista_menus %}
-            <a href="{% url 'detalleMENUConPlantillas' menu.id %}">
+            <a href="{% url 'detalleMENUConPlantillas' menu.id %}#menus">
                 <img class="menu-item" src="{% static 'style/' %}{{ menu.nombre }}.jpg" alt="{{ menu.nombre }}">
             </a>
         {% endfor %}
