@@ -66,7 +66,7 @@
 
       <div id="menus">
         {% for menu in lista_menus %}
-            <a href="{% url 'detalleMENUConPlantillas' menu.id %}#menus">
+            <a href="{% url 'detalleMENUConPlantillas' menu.id %}#contenidos">
                 <img class="menu-item" src="{% static 'style/' %}{{ menu.nombre }}.jpg" alt="{{ menu.nombre }}">
             </a>
         {% endfor %}
@@ -74,11 +74,10 @@
 
       <br>
 
-      <div id="contenidos">
       
-        {%block contenido%} {%endblock%}
+      {%block contenido%} {%endblock%}
 
-      </div>
+    
 
 
       <div id="comments-section">

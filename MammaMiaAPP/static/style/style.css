@@ -784,6 +784,8 @@ table tr td
   display: inline-block;
   font-family: 'Jost', sans-serif;
   margin: 80px;
+  width: 93%;
+  border-radius: 5px;
   padding: 20px;
   background-color: #f8f9fa; /* Fondo claro */
   text-align: center; /* Centrar el contenido */

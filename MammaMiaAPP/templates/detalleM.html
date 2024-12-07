@@ -2,9 +2,12 @@
 
 
 {% block contenido %}
+<div id="contenidos">
+
     <h1><strong>Menú {{ menu.nombre }}</strong></h1>
     <p>{{ menu.descripcion }}</p>
     <p><strong>{{ menu.precio }} €</strong> </p>
+
 
     <ul>
         {% for plato in menu.platos.all %}
@@ -41,5 +44,5 @@
             <li>No hay platos disponibles.</li>
         {% endfor %}
     </ul>
-    
+</div>
 {% endblock %}
