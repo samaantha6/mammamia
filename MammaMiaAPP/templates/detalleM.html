@@ -14,28 +14,28 @@
             {% if plato.orden == 0 %}
                 <li>
                     <p>{{ plato.tipo }}</p>
-                    <a href="{% url 'detallePLATOConPlantillas' plato.id %}">
+                    <a href="{% url 'detallePLATOConPlantillas' plato.id %}#platos">
                         {{ plato.nombre }}
                     </a>
                 </li>
             {% elif plato.orden == 1 %}
                 <li>
                     <p>{{ plato.tipo }}</p>
-                    <a href="{% url 'detallePLATOConPlantillas' plato.id %}">
+                    <a href="{% url 'detallePLATOConPlantillas' plato.id %}#platos">
                         {{ plato.nombre }}
                     </a>
                 </li>
             {% elif plato.orden == 2 %}
                 <li>
                     <p>{{ plato.tipo }}:</p>
-                    <a href="{% url 'detallePLATOConPlantillas' plato.id %}">
+                    <a href="{% url 'detallePLATOConPlantillas' plato.id %}#platos">
                         {{ plato.nombre }}
                     </a>
                 </li>
             {% elif plato.orden == 3 %}
                 <li>
                     <p>{{ plato.tipo }}</p>
-                    <a href="{% url 'detallePLATOConPlantillas' plato.id %}">
+                    <a href="{% url 'detallePLATOConPlantillas' plato.id %}#platos">
                         {{ plato.nombre }}
                     </a>
                 </li>

@@ -1,19 +1,19 @@
 {% extends 'base.html' %}
 {% block contenido %}
 
-<div class="detalle-ingrediente">
+<div id="detalle-ingrediente">
     <h1>Ingrediente</h1>
     
     <div class="contenedor-ingrediente">
         <div class="info-ingrediente">
             <p><strong>Nombre:</strong> {{ ingrediente.nombre }}</p>
             <p><strong>Alergeno:</strong> {{ ingrediente.alergeno }}</p>
-            <p><strong>Categoría:</strong> {{ ingrediente.categoria }}</p>
-            <p><strong>Platos Asociados:</strong></p>
+            <p><strong>Categoría:</strong> {{ ingrediente.categoria }}</p> <br>
+            <p><em><strong>Platos Asociados</strong></p>
             <ul>
                 {% for plato in ingrediente.plato.all %}
                     <li>
-                        <a href="{% url 'detallePLATOConPlantillas' plato.id %}">{{ plato.nombre }}</a>
+                        <a href="{% url 'detallePLATOConPlantillas' plato.id %}#platos">{{ plato.nombre }}</a>
                     </li>
                 {% empty %}
                     <li>No hay platos asociados a este ingrediente.</li>

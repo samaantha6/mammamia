@@ -126,8 +126,7 @@ img
   gap: 1px; 
   margin: 0 auto; 
   margin-top: 40px;
-
-
+  padding: 10px;
 }
 
 .menu-item {
@@ -145,8 +144,10 @@ img
 
 .misImagenesPlato
 {
-
-  width: 25vh;
+  width: 30%;
+  height: 30%;
+  object-fit: cover; 
+  border-radius: 10px; 
 }
 
 
@@ -189,9 +190,8 @@ a:hover
 .center
 { display: inline-block;
   text-align: center;
-  margin: 20px auto;}
-
-
+  margin: 20px auto;
+}
 
 
 ul
@@ -698,72 +698,6 @@ table tr td
   border: 1px solid #ccc;
 }
 
-.ingredientes {
-  margin-top: 20px;
-}
-
-.ingredientes h2 {
-  margin-bottom: 10px;
-  color: #555;
-}
-
-.ingredientes-list {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-}
-
-.ingrediente-item {
-  margin-bottom: 8px;
-}
-
-.ingrediente-link {
-  text-decoration: none;
-  color: #555;
-  font-weight: 500;
-}
-
-.ingrediente-link:hover {
-  color: #555;
-  text-decoration: underline;
-}
-
-.ingrediente-item-empty {
-  color: #999;
-  font-style: italic;
-}
-
-.detalle-ingrediente {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  margin: 20px auto;
-  max-width: 800px;
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #f9f9f9;
-}
-
-.detalle-ingrediente h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.contenedor-ingrediente {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.info-ingrediente {
-  font-size: 16px;
-  color: #333;
-}
-
-.info-ingrediente strong {
-  color: #555;
-}
 
 .plato-link {
   text-decoration: none;
@@ -780,7 +714,7 @@ table tr td
 
 
 /* Estilo general del contenido del menú */
-#contenidos, #platos {
+#contenidos {
   display: inline-block;
   font-family: 'Jost', sans-serif;
   margin: 80px;
@@ -793,7 +727,7 @@ table tr td
 
 
 /* Título del menú */
-#contenidos h1, #platos h1 {
+#contenidos h1 {
   color: #343a40; /* Gris oscuro */
   font-size: 28px;
   margin-bottom: 10px;
@@ -801,19 +735,19 @@ table tr td
 }
 
 /* Descripción y precio del menú */
-#contenidos p, #platos p {
+#contenidos p {
   font-size: 16px;
   color: #495057; /* Gris intermedio */
   margin-bottom: 10px;
   text-align: center; /* Centrar los párrafos */
 }
 
-#contenidos p strong, #platos p strong {
+#contenidos p strong {
   font-weight: bold;
 }
 
 /* Subtítulo de Platos */
-#contenidos h2, #platos h2 {
+#contenidos h2 {
   color: #495057;
   font-size: 24px;
   margin-top: 20px;
@@ -824,14 +758,14 @@ table tr td
 }
 
 /* Lista de platos */
-#contenidos ul, #platos ul {
+#contenidos ul {
   list-style: none;
   padding: 0;
   margin: 0;
   text-align: center; /* Centrar la lista */
 }
 
-#contenidos ul li, #platos ul li {
+#contenidos ul li {
   align-items: center;
   list-style: none;
   margin-bottom: 10px;
@@ -840,7 +774,7 @@ table tr td
 }
 
 /* Títulos de los platos (Entrante, Primer Plato, etc.) */
-#contenidos ul li p, #platos ul li p {
+#contenidos ul li p{
   font-weight: bold;
   color: #343a40;
   margin-bottom: 5px;
@@ -848,7 +782,7 @@ table tr td
 }
 
 /* Links a los detalles del plato */
-#contenidos ul li a, #platos ul li a {
+#contenidos ul li a{
   text-decoration: none;
   color: #000000; /* Negro */
   font-size: 16px;
@@ -856,15 +790,182 @@ table tr td
   text-align: center; /* Centrar los links */
 }
 
-#contenidos ul li a:hover, #platos ul li a:hover {
+#contenidos ul li a:hover {
   color: #2f2f2f; /* Gris más oscuro */
 }
 
-#contenidos, #platos {
+#contenidos{
   display: inline-block;
   font-family: 'Jost', sans-serif;
   margin: 20px;
   padding: 20px;
   background-color: #f8f9fa; /* Fondo claro */
   
+}
+
+#platos {
+  display: block;
+  font-family: 'Jost', sans-serif;
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 800px;
+  background-color: #ffffff; 
+  border-radius: 15px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  text-align: center;
+}
+
+#platos a{
+  text-decoration: none; 
+}
+
+#platos h1 {
+  font-size: 33px;
+  color: #000000; 
+  margin-bottom: 10px;
+}
+
+#platos p {
+  font-size: 22px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #673833; 
+  margin-bottom: 10px;
+}
+
+#platos h2 {
+  font-size: 22px;
+  color: #000000; 
+  margin-bottom: 15px;
+  border-bottom: 2px solid #000000; 
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+#platos ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left; 
+}
+
+#platos ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto; 
+  text-align: center; 
+}
+
+#platos ul li {
+  background-color: #f8f9fad6; 
+  margin: 10px auto; 
+  padding: 10px 15px;
+  border-radius: 8px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  display: inline-block; 
+  text-align: center; 
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#platos ul li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#platos ul li a {
+  text-decoration: none;
+  color: #000000; 
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+#platos ul li a:hover {
+  color: #5d83bd; 
+}
+
+.misImagenesPlato {
+  margin-top: 20px;
+  width: 40%;
+  height: auto;
+  border-radius: 15px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s;
+  margin-bottom: 10px;
+}
+
+.misImagenesPlato:hover {
+  transform: scale(1.05); 
+}
+
+
+
+
+#detalle-ingrediente {
+  font-family: 'Jost', sans-serif;
+  line-height: 1.8;
+  margin: 30px auto;
+  max-width: 800px;
+  padding: 25px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eaeaea;
+  text-align: center; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#detalle-ingrediente h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+.contenedor-ingrediente {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center; 
+}
+
+.info-ingrediente {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  text-align: center; 
+}
+
+.info-ingrediente strong {
+  color: #444;
+  font-weight: bold;
+}
+
+.info-ingrediente ul {
+  margin: 10px 0;
+  font-size: 16px;
+  padding-left: 0; 
+  color: #666;
+  text-align: center;
+}
+
+.info-ingrediente li {
+  margin-bottom: 8px;
+  list-style: none;
+}
+
+.info-ingrediente a {
+  text-decoration: none;
+  color: #e74c3c;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.info-ingrediente a:hover {
+  color: #497438;
+  text-decoration: underline;
 }

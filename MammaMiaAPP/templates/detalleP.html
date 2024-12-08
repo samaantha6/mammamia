@@ -3,14 +3,16 @@
 
 <div id="platos">
     <h1><strong>{{ plato.nombre }}</strong></h1>
-    <p>Menú {{ plato.menu.nombre }}</p>
+    <a href="{% url 'listaM' %}#menus">
+        <p><em>Menú {{ plato.menu.nombre }}</em></p>
+    </a>
 
-    <h2>Ingredientes:</h2>
+    <h2>Ingredientes</h2>
     <ul>
         {% for ingrediente in plato.ingredientes.all %}
         <li>
-            <a href="{% url 'detalleINGREDIENTEConPlantillas' ingrediente.id %}">
-                {{ ingrediente.nombre }}
+            <a href="{% url 'detalleINGREDIENTEConPlantillas' ingrediente.id %}#detalle-ingrediente">
+                <strong><em>{{ ingrediente.nombre }}</em></strong>
             </a>
         </li>
         {% empty %}
@@ -19,7 +21,6 @@
     </ul>
 
     {% if plato.imagenPlato %}
-        <p>Imagen:</p>
         <img class="misImagenesPlato" src="{{ plato.imagenPlato }}" alt="Imagen del plato">
 
     {% else %}
