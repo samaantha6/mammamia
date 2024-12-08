@@ -2,14 +2,13 @@
 {% block contenido %}
 
 <div id="detalle-ingrediente">
-    <h1>Ingrediente</h1>
+    <h1>───   {{ ingrediente.nombre }}   ───</h1>
     
     <div class="contenedor-ingrediente">
         <div class="info-ingrediente">
-            <p><strong>Nombre:</strong> {{ ingrediente.nombre }}</p>
             <p><strong>Alergeno:</strong> {{ ingrediente.alergeno }}</p>
             <p><strong>Categoría:</strong> {{ ingrediente.categoria }}</p> <br>
-            <p><em><strong>Platos Asociados</strong></p>
+            <p class="otrosPlatos"><strong>Platos con el ingrediente:</strong></p>
             <ul>
                 {% for plato in ingrediente.plato.all %}
                     <li>

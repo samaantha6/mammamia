@@ -4,45 +4,46 @@
 {% block contenido %}
 <div id="contenidos">
 
-    <h1><strong>Menú {{ menu.nombre }}</strong></h1>
-    <p>{{ menu.descripcion }}</p>
-    <p><strong>{{ menu.precio }} €</strong> </p>
-
-
+    <h1><strong>─────   Menú {{ menu.nombre }}   ─────</strong></h1>
+    <p class="descripcion">{{ menu.descripcion }}*</p>
+    
+    
     <ul>
         {% for plato in menu.platos.all %}
             {% if plato.orden == 0 %}
                 <li>
-                    <p>{{ plato.tipo }}</p>
+                    <p class="tipoPlato">───  {{ plato.tipo }}  ───</p>
                     <a href="{% url 'detallePLATOConPlantillas' plato.id %}#platos">
                         {{ plato.nombre }}
                     </a>
                 </li>
-            {% elif plato.orden == 1 %}
+                {% elif plato.orden == 1 %} 
                 <li>
-                    <p>{{ plato.tipo }}</p>
+                    <p class="tipoPlato">───  {{ plato.tipo }}  ───</p>
                     <a href="{% url 'detallePLATOConPlantillas' plato.id %}#platos">
                         {{ plato.nombre }}
                     </a>
                 </li>
-            {% elif plato.orden == 2 %}
+                {% elif plato.orden == 2 %}
                 <li>
-                    <p>{{ plato.tipo }}:</p>
+                    <p class="tipoPlato">───  {{ plato.tipo }}  ───</p>
                     <a href="{% url 'detallePLATOConPlantillas' plato.id %}#platos">
                         {{ plato.nombre }}
                     </a>
                 </li>
-            {% elif plato.orden == 3 %}
+                {% elif plato.orden == 3 %}
                 <li>
-                    <p>{{ plato.tipo }}</p>
+                    <p class="tipoPlato">─── {{ plato.tipo }} ───</p>
                     <a href="{% url 'detallePLATOConPlantillas' plato.id %}#platos">
                         {{ plato.nombre }}
                     </a>
                 </li>
-            {% endif %}
-        {% empty %}
-            <li>No hay platos disponibles.</li>
-        {% endfor %}
-    </ul>
+                {% endif %}
+                {% empty %}
+                <li>No hay platos disponibles.</li>
+                {% endfor %}
+            </ul>
+    <p class="precio"><strong>({{ menu.precio }}€)</strong> </p>
+    <p class="descripcion"> *bebida y pan incluidos.</p>
 </div>
 {% endblock %}
