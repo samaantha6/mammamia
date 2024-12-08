@@ -435,7 +435,7 @@ table tr td
   align-items: flex-start;
   gap: 30px; 
   margin-top: 20px; 
-  margin-left: 160px;
+  margin-left: 100px;
   
 }
 
@@ -541,10 +541,10 @@ table tr td
   text-align: center;
   font-family: 'Domine', 'Times New Roman', Times, serif;
   font-size: 1.8rem;
-  color: #333;
+  color: #000000;
   text-align: center;
   margin-bottom: 30px;
-  margin-top: -30px;
+  margin-top: 30px;
 }
 
 #comments-list {
@@ -556,7 +556,6 @@ table tr td
   overflow-x: hidden; 
   max-height: 400px;
   display: inline-block;
-  
 }
 
 .comment {
@@ -737,10 +736,8 @@ table tr td
 /* Título del menú */
 #contenidos h1 {
   font-family: 'Domine';
-  color: #000000; 
+  color: #000000;
   font-size: 2.5rem;
-
-  margin-top: 10px;
   text-align: center; 
 }
 

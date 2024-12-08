@@ -3,7 +3,7 @@
 
 <div id="platos">
     <h1><strong>─────  {{ plato.nombre }}  ─────</strong></h1>
-    <a href="{% url 'listaM' %}#menus">
+    <a href="{% url 'detalleMENUConPlantillas' plato.menu.id %}#contenidos">
         <p>─  Menú {{ plato.menu.nombre }}   ─</p>
     </a>
 
