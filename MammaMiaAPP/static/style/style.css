@@ -32,7 +32,6 @@ html, body {
 body
 { font: normal .80em 'Jost', sans-serif;
   background-image: url("fondoSiteCont.jpg");  
-  background-position: cover; 
   background-repeat: repeat;   
   color: #000;
 }
